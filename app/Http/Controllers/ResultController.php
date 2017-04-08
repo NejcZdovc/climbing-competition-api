@@ -242,7 +242,11 @@ class ResultController extends Controller
             $total=0;
 
             for ($i=0; $i < $routesCount; $i++) {
-                $total+=$points[$i];
+                if ($i==0) {
+                 $total = $points[$i];
+                } else {
+                    $total*=$points[$i];
+                }
             }
 
             $total=pow($total, $routesCount);
